@@ -55,7 +55,7 @@ const Products = () => {
                 <td className="py-4 text-sm">{product.id}</td>
                 <td className="py-4">
                   <div>
-                    <p className="text-gray-900">{product.title}</p>
+                    <p className="text-gray-00">{product.title}</p>
                     <p className="text-gray-500 text-sm">{product.description}</p>
                   </div>
                 </td>

@@ -4,16 +4,20 @@ import Layout from './components/layout/Layout';
 import Dashboard from './components/dashboard/Dashboard';
 import Products from './components/products/Products';
 import Transactions from './components/transactions/Transactions';
+import SignIn from './components/auth/SignIn';
+import Register from './components/auth/Register';
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/transactions" element={<Transactions />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="products" element={<Products />} />
+        <Route path="transactions" element={<Transactions />} />
+      </Route>
+    </Routes>
   );
 }
 
