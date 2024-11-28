@@ -13,7 +13,7 @@ const Transactions = () => {
     const fetchData = async () => {
       try {
         const transactionsRes = await fetch('http://localhost:1337/api/transactions');
-        console.log('Transaction response:', await transactionsRes.clone().json()); // Debug log
+        console.log('Transaction response:', await transactionsRes.clone().json());
 
         const [productsRes, transactions, vendorsRes] = await Promise.all([
           fetch('http://localhost:1337/api/products'),
@@ -30,7 +30,7 @@ const Transactions = () => {
           vendors: vendors.data?.length || 0
         });
 
-        // Format transactions selon la structure de votre API
+       
         const formattedTransactions = transactions.data?.map(t => ({
           id: t.id,
           orderStatus: t.order_status,
@@ -40,7 +40,7 @@ const Transactions = () => {
           totalPrice: t.total_price
         })) || [];
 
-        console.log('Formatted transactions:', formattedTransactions); // Debug log
+        console.log('Formatted transactions:', formattedTransactions); 
         setRecentTransactions(formattedTransactions);
 
       } catch (error) {
@@ -57,7 +57,7 @@ const Transactions = () => {
       
       {/* Transactions Table */}
       <div className="bg-white rounded-lg p-6">
-        <h2 className="text-lg font-semibold mb-6">Recent Transactions</h2>
+        <h2 className="text-lg font-semibold mb-6">Total Transactions</h2>
         <table className="w-full">
           <thead>
             <tr>
